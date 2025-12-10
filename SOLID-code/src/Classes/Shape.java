@@ -27,5 +27,9 @@ public abstract class Shape {
     }
 
     public abstract void shift(int x, int y);
+    // Tambahkan method getter untuk renderer di kelas Shape
+    public ShapeRenderer getRenderer() {
+        return renderer;
+    }
     public abstract Shape deepCopy();
 }

@@ -35,4 +35,9 @@ public class SquareShape extends Shape {
         }
         return copy;
     }
+
+    // Tambahkan method getter di kelas SquareShape
+    public int getX() { return x; }
+    public int getY() { return y; }
+    public int getSize() { return size; }
 }

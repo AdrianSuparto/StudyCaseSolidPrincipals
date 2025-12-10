@@ -252,13 +252,141 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
             repaint();
 
         } else if (currentMode == DrawingMode.RESIZE && controller.getSelectedShape() != null) {
-            // Simple resize: move the shape
-            int dx = e.getX() - startPoint.x;
-            int dy = e.getY() - startPoint.y;
-            controller.moveShape(controller.getSelectedShape(), dx, dy);
-            startPoint = e.getPoint();
+            // Resize shape berdasarkan pergerakan mouse
+            resizeShape(e.getPoint());
+            startPoint = e.getPoint(); // Update start point untuk resize berkelanjutan
             repaint();
         }
+    }
+
+    private void resizeShape(Point currentPoint) {
+        Shape selectedShape = controller.getSelectedShape();
+        if (selectedShape == null) return;
+
+        // Hitung delta movement
+        int dx = currentPoint.x - startPoint.x;
+        int dy = currentPoint.y - startPoint.y;
+
+        // Resize berdasarkan jenis shape
+        if (selectedShape instanceof LineShape) {
+            resizeLine((LineShape) selectedShape, dx, dy);
+        } else if (selectedShape instanceof RectangleShape) {
+            resizeRectangle((RectangleShape) selectedShape, dx, dy);
+        } else if (selectedShape instanceof CircleShape) {
+            resizeCircle((CircleShape) selectedShape, dx, dy);
+        } else if (selectedShape instanceof SquareShape) {
+            resizeSquare((SquareShape) selectedShape, dx, dy);
+        } else if (selectedShape instanceof TriangleShape) {
+            resizeTriangle((TriangleShape) selectedShape, dx, dy);
+        }
+    }
+
+    private void resizeLine(LineShape line, int dx, int dy) {
+        // Resize dengan mengubah titik akhir
+        int x2 = line.getX2() + dx;
+        int y2 = line.getY2() + dy;
+
+        // Buat line baru dengan titik akhir yang diupdate
+        controller.saveState();
+        // Hapus line lama
+        controller.removeShape(line);
+        // Buat line baru
+        Shape newLine = controller.getShapesFactory().createShape(
+                "line",
+                line.getX1(), line.getY1(),
+                x2, y2,
+                line.getRenderer().getBorderColor()
+        );
+        controller.addShape(newLine);
+        controller.setSelectedShape(newLine);
+    }
+
+    private void resizeRectangle(RectangleShape rect, int dx, int dy) {
+        // Resize dengan mengubah titik kanan bawah
+        int x2 = rect.getX2() + dx;
+        int y2 = rect.getY2() + dy;
+
+        controller.saveState();
+        controller.removeShape(rect);
+        Shape newRect = controller.getShapesFactory().createShape(
+                "rectangle",
+                rect.getX1(), rect.getY1(),
+                x2, y2,
+                rect.getRenderer().getBorderColor()
+        );
+        if (rect.getRenderer().isFilled()) {
+            newRect.setFillColor(rect.getRenderer().getFillColor());
+        }
+        controller.addShape(newRect);
+        controller.setSelectedShape(newRect);
+    }
+
+    private void resizeCircle(CircleShape circle, int dx, int dy) {
+        // Resize dengan mengubah radius berdasarkan pergerakan mouse
+        int newRadius = Math.max(5, circle.getRadius() + Math.max(dx, dy));
+
+        controller.saveState();
+        controller.removeShape(circle);
+        Shape newCircle = new CircleShape(
+                circle.getCenterX() - newRadius,
+                circle.getCenterY() - newRadius,
+                newRadius * 2,
+                circle.getRenderer().getBorderColor()
+        );
+        if (circle.getRenderer().isFilled()) {
+            newCircle.setFillColor(circle.getRenderer().getFillColor());
+        }
+        controller.addShape(newCircle);
+        controller.setSelectedShape(newCircle);
+    }
+
+    private void resizeSquare(SquareShape square, int dx, int dy) {
+        // Resize dengan mengubah size berdasarkan pergerakan mouse
+        int newSize = Math.max(10, square.getSize() + Math.max(dx, dy));
+
+        controller.saveState();
+        controller.removeShape(square);
+        // Kita perlu mengetahui ukuran square saat ini (tambahkan getter di SquareShape)
+        Shape newSquare = new SquareShape(
+                square.getX(), square.getY(),
+                newSize,
+                square.getRenderer().getBorderColor()
+        );
+        if (square.getRenderer().isFilled()) {
+            newSquare.setFillColor(square.getRenderer().getFillColor());
+        }
+        controller.addShape(newSquare);
+        controller.setSelectedShape(newSquare);
+    }
+
+    private void resizeTriangle(TriangleShape triangle, int dx, int dy) {
+        // Untuk triangle, kita resize dengan menggeser semua titik secara proporsional
+        int centerX = (triangle.getX1() + triangle.getX2() + triangle.getX3()) / 3;
+        int centerY = (triangle.getY1() + triangle.getY2() + triangle.getY3()) / 3;
+
+        // Hitung faktor scale
+        float scaleX = 1.0f + (dx / 100.0f);
+        float scaleY = 1.0f + (dy / 100.0f);
+
+        // Apply scale ke semua titik
+        int x1 = (int)(centerX + (triangle.getX1() - centerX) * scaleX);
+        int y1 = (int)(centerY + (triangle.getY1() - centerY) * scaleY);
+        int x2 = (int)(centerX + (triangle.getX2() - centerX) * scaleX);
+        int y2 = (int)(centerY + (triangle.getY2() - centerY) * scaleY);
+        int x3 = (int)(centerX + (triangle.getX3() - centerX) * scaleX);
+        int y3 = (int)(centerY + (triangle.getY3() - centerY) * scaleY);
+
+        controller.saveState();
+        controller.removeShape(triangle);
+        Shape newTriangle = controller.getShapesFactory().createTriangle(
+                x1, y1, x2, y2, x3, y3,
+                triangle.getRenderer().getBorderColor()
+        );
+        if (triangle.getRenderer().isFilled()) {
+            newTriangle.setFillColor(triangle.getRenderer().getFillColor());
+        }
+        controller.addShape(newTriangle);
+        controller.setSelectedShape(newTriangle);
     }
 
     private void createLine() {

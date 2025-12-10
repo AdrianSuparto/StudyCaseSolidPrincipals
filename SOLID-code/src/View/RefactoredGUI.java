@@ -1,14 +1,18 @@
 package View;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 
 public class RefactoredGUI extends JFrame {
     private RefactoredBoard board;
     private JColorChooser colorChooser;
+    private Color currentColor; // Menyimpan warna saat ini
 
     public RefactoredGUI() {
         initComponents();
+        setupListeners();
         setupLayout();
     }
 
@@ -16,9 +20,27 @@ public class RefactoredGUI extends JFrame {
         board = new RefactoredBoard();
         colorChooser = new JColorChooser();
 
+        // Set warna default
+        currentColor = Color.BLACK;
+        colorChooser.setColor(currentColor);
+        board.setCurrentColor(currentColor); // Set warna awal ke board
+
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Drawing Application");
         setSize(1000, 700);
+    }
+
+    private void setupListeners() {
+        // Listener untuk color chooser
+        colorChooser.getSelectionModel().addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                currentColor = colorChooser.getColor();
+                // Update warna di board
+                board.setCurrentColor(currentColor);
+                System.out.println("Warna diupdate ke: " + currentColor); // Debug
+            }
+        });
     }
 
     private void setupLayout() {
@@ -59,7 +81,8 @@ public class RefactoredGUI extends JFrame {
             final DrawingMode mode = modes[i];
             button.addActionListener(e -> {
                 board.setDrawingMode(mode);
-                board.setCurrentColor(colorChooser.getColor());
+                // Pastikan warna saat ini digunakan
+                board.setCurrentColor(currentColor);
             });
             button.setToolTipText("Click to draw " + shapeButtons[i]);
             panel.add(button);
@@ -71,13 +94,34 @@ public class RefactoredGUI extends JFrame {
     private JPanel createOperationToolbar() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
-        // Operation buttons
-        JButton selectBtn = createOperationButton("Select", DrawingMode.SELECT, "Select a shape");
-        JButton moveBtn = createOperationButton("Move", DrawingMode.MOVE, "Move a shape");
-        JButton copyBtn = createOperationButton("Copy", DrawingMode.COPY, "Copy a shape");
-        JButton resizeBtn = createOperationButton("Resize", DrawingMode.RESIZE, "Resize a shape");
-        JButton brushBtn = createOperationButton("Brush", DrawingMode.BRUSH, "Fill a shape with color");
-        JButton eraseBtn = createOperationButton("Erase", DrawingMode.ERASE, "Erase a shape");
+        // Operation buttons dengan lambda expressions
+        JButton selectBtn = new JButton("Select");
+        selectBtn.addActionListener(e -> board.setDrawingMode(DrawingMode.SELECT));
+        selectBtn.setToolTipText("Select a shape");
+
+        JButton moveBtn = new JButton("Move");
+        moveBtn.addActionListener(e -> board.setDrawingMode(DrawingMode.MOVE));
+        moveBtn.setToolTipText("Move a shape");
+
+        JButton copyBtn = new JButton("Copy");
+        copyBtn.addActionListener(e -> board.setDrawingMode(DrawingMode.COPY));
+        copyBtn.setToolTipText("Copy a shape");
+
+        JButton resizeBtn = new JButton("Resize");
+        resizeBtn.addActionListener(e -> board.setDrawingMode(DrawingMode.RESIZE));
+        resizeBtn.setToolTipText("Resize a shape");
+
+        // Brush button - update warna ke board saat diklik
+        JButton brushBtn = new JButton("Brush");
+        brushBtn.addActionListener(e -> {
+            board.setDrawingMode(DrawingMode.BRUSH);
+            board.setCurrentColor(currentColor);
+        });
+        brushBtn.setToolTipText("Fill a shape with current color");
+
+        JButton eraseBtn = new JButton("Erase");
+        eraseBtn.addActionListener(e -> board.setDrawingMode(DrawingMode.ERASE));
+        eraseBtn.setToolTipText("Erase a shape");
 
         // Utility buttons
         JButton undoBtn = new JButton("Undo");
@@ -103,13 +147,6 @@ public class RefactoredGUI extends JFrame {
         panel.add(clearBtn);
 
         return panel;
-    }
-
-    private JButton createOperationButton(String text, DrawingMode mode, String tooltip) {
-        JButton button = new JButton(text);
-        button.addActionListener(e -> board.setDrawingMode(mode));
-        button.setToolTipText(tooltip);
-        return button;
     }
 
     public static void main(String[] args) {

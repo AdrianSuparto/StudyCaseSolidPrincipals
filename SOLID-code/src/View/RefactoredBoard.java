@@ -29,7 +29,7 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
     public RefactoredBoard() {
         this.controller = new BoardController();
         this.currentMode = DrawingMode.NONE;
-        this.currentColor = Color.BLACK;
+        this.currentColor = Color.BLACK; // Default color
         this.startPoint = null;
         this.currentPoint = null;
         this.triangleClickCount = 0;
@@ -57,13 +57,13 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
                         currentMode == DrawingMode.CIRCLE ||
                         currentMode == DrawingMode.SQUARE)) {
 
-            g2d.setColor(currentColor);
+            g2d.setColor(currentColor); // Gunakan warna saat ini
             drawPreview(g2d);
         }
 
         // Draw triangle preview points
         if (currentMode == DrawingMode.TRIANGLE && triangleClickCount > 0) {
-            g2d.setColor(Color.RED);
+            g2d.setColor(currentColor); // Gunakan warna saat ini untuk preview
             for (int i = 0; i < triangleClickCount; i++) {
                 g2d.fillOval(trianglePoints[i].x - 3, trianglePoints[i].y - 3, 6, 6);
             }
@@ -116,6 +116,7 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
 
     public void setCurrentColor(Color color) {
         this.currentColor = color;
+        // Tidak perlu reset mode, warna langsung terupdate
     }
 
     public void undo() {
@@ -145,12 +146,12 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
         triangleClickCount++;
 
         if (triangleClickCount == 3) {
-            // Create triangle dengan method createTriangle yang baru
+            // Create triangle dengan warna saat ini
             Shape triangle = controller.getShapesFactory().createTriangle(
                     trianglePoints[0].x, trianglePoints[0].y,
                     trianglePoints[1].x, trianglePoints[1].y,
                     trianglePoints[2].x, trianglePoints[2].y,
-                    currentColor
+                    currentColor // Gunakan warna saat ini
             );
             controller.addShape(triangle);
             triangleClickCount = 0;
@@ -261,45 +262,45 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
     }
 
     private void createLine() {
-        // Gunakan method createShape dengan 2 titik
+        // Buat line dengan warna saat ini
         Shape line = controller.getShapesFactory().createShape(
                 "line",
                 startPoint.x, startPoint.y,
                 currentPoint.x, currentPoint.y,
-                currentColor
+                currentColor // Gunakan warna saat ini
         );
         controller.addShape(line);
     }
 
     private void createRectangle() {
-        // Gunakan method createShape dengan 2 titik
+        // Buat rectangle dengan warna saat ini
         Shape rect = controller.getShapesFactory().createShape(
                 "rectangle",
                 startPoint.x, startPoint.y,
                 currentPoint.x, currentPoint.y,
-                currentColor
+                currentColor // Gunakan warna saat ini
         );
         controller.addShape(rect);
     }
 
     private void createCircle() {
-        // Gunakan method createShape dengan 2 titik
+        // Buat circle dengan warna saat ini
         Shape circle = controller.getShapesFactory().createShape(
                 "circle",
                 startPoint.x, startPoint.y,
                 currentPoint.x, currentPoint.y,
-                currentColor
+                currentColor // Gunakan warna saat ini
         );
         controller.addShape(circle);
     }
 
     private void createSquare() {
-        // Gunakan method createShape dengan 2 titik
+        // Buat square dengan warna saat ini
         Shape square = controller.getShapesFactory().createShape(
                 "square",
                 startPoint.x, startPoint.y,
                 currentPoint.x, currentPoint.y,
-                currentColor
+                currentColor // Gunakan warna saat ini
         );
         controller.addShape(square);
     }

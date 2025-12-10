@@ -28,8 +28,12 @@ public class CircleShape extends Shape {
 
     @Override
     public Shape deepCopy() {
-        CircleShape copy = new CircleShape(centerX - radius, centerY - radius,
-                radius, renderer.getBorderColor());
+        CircleShape copy = new CircleShape(
+                centerX - radius,
+                centerY - radius,
+                radius * 2,  // ✅ Perbaikan: diameter = radius * 2
+                renderer.getBorderColor()
+        );
         if (renderer.isFilled()) {
             copy.setFillColor(renderer.getFillColor());
         }

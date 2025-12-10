@@ -25,6 +25,8 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
     private Point currentPoint;
     private int triangleClickCount;
     private Point[] trianglePoints;
+    private Shape draggedShape; // Menyimpan shape yang sedang didrag
+    private Point dragOffset; // Offset dari titik klik ke shape
 
     public RefactoredBoard() {
         this.controller = new BoardController();
@@ -34,6 +36,8 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
         this.currentPoint = null;
         this.triangleClickCount = 0;
         this.trianglePoints = new Point[3];
+        this.draggedShape = null;
+        this.dragOffset = null;
 
         addMouseListener(this);
         addMouseMotionListener(this);
@@ -45,12 +49,19 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        // Draw all shapes
+        // Draw all shapes kecuali yang sedang didrag
         for (Shape shape : controller.getShapes()) {
-            shape.draw(g2d);
+            if (shape != draggedShape) {
+                shape.draw(g2d);
+            }
         }
 
-        // Draw preview if dragging
+        // Draw shape yang sedang didrag di atas (jika ada)
+        if (draggedShape != null) {
+            draggedShape.draw(g2d);
+        }
+
+        // Draw preview if dragging untuk membuat shape baru
         if (startPoint != null && currentPoint != null &&
                 (currentMode == DrawingMode.LINE ||
                         currentMode == DrawingMode.RECTANGLE ||
@@ -110,27 +121,34 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
         this.currentMode = mode;
         this.triangleClickCount = 0;
         controller.setSelectedShape(null);
+        draggedShape = null;
+        dragOffset = null;
         resetPoints();
         repaint();
     }
 
     public void setCurrentColor(Color color) {
         this.currentColor = color;
-        // Tidak perlu reset mode, warna langsung terupdate
     }
 
     public void undo() {
         controller.undo();
+        draggedShape = null;
+        dragOffset = null;
         repaint();
     }
 
     public void redo() {
         controller.redo();
+        draggedShape = null;
+        dragOffset = null;
         repaint();
     }
 
     public void clear() {
         controller.clearAll();
+        draggedShape = null;
+        dragOffset = null;
         repaint();
     }
 
@@ -151,7 +169,7 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
                     trianglePoints[0].x, trianglePoints[0].y,
                     trianglePoints[1].x, trianglePoints[1].y,
                     trianglePoints[2].x, trianglePoints[2].y,
-                    currentColor // Gunakan warna saat ini
+                    currentColor
             );
             controller.addShape(triangle);
             triangleClickCount = 0;
@@ -177,6 +195,16 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
                 if (selected != null) {
                     controller.setSelectedShape(selected);
                     controller.setDragStartPoint(e.getPoint());
+
+                    // Untuk mode MOVE, simpan shape yang akan didrag
+                    if (currentMode == DrawingMode.MOVE) {
+                        draggedShape = selected.deepCopy(); // Buat salinan untuk drag
+                        // Hitung offset dari mouse ke pusat shape
+                        dragOffset = new Point(
+                                e.getX() - getShapeCenterX(selected),
+                                e.getY() - getShapeCenterY(selected)
+                        );
+                    }
                 }
                 break;
 
@@ -188,6 +216,44 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
                 startPoint = e.getPoint();
                 currentPoint = e.getPoint();
                 break;
+        }
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        if (currentMode == DrawingMode.LINE ||
+                currentMode == DrawingMode.RECTANGLE ||
+                currentMode == DrawingMode.CIRCLE ||
+                currentMode == DrawingMode.SQUARE) {
+
+            currentPoint = e.getPoint();
+            repaint();
+
+        } else if (currentMode == DrawingMode.MOVE && draggedShape != null) {
+            // Update posisi draggedShape berdasarkan mouse movement
+            int newCenterX = e.getX() - dragOffset.x;
+            int newCenterY = e.getY() - dragOffset.y;
+
+            // Hitung delta dari posisi asli
+            Shape originalShape = controller.getSelectedShape();
+            if (originalShape != null) {
+                int originalCenterX = getShapeCenterX(originalShape);
+                int originalCenterY = getShapeCenterY(originalShape);
+
+                int dx = newCenterX - originalCenterX;
+                int dy = newCenterY - originalCenterY;
+
+                // Reset geometry dan pindahkan shape salinan
+                draggedShape = originalShape.deepCopy();
+                draggedShape.shift(dx, dy);
+                repaint();
+            }
+
+        } else if (currentMode == DrawingMode.RESIZE && controller.getSelectedShape() != null) {
+            // Resize shape berdasarkan pergerakan mouse
+            resizeShape(e.getPoint());
+            startPoint = e.getPoint(); // Update start point untuk resize berkelanjutan
+            repaint();
         }
     }
 
@@ -239,25 +305,20 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
 
         resetPoints();
         controller.setSelectedShape(null);
+        draggedShape = null;
+        dragOffset = null;
     }
 
     @Override
-    public void mouseDragged(MouseEvent e) {
-        if (currentMode == DrawingMode.LINE ||
-                currentMode == DrawingMode.RECTANGLE ||
-                currentMode == DrawingMode.CIRCLE ||
-                currentMode == DrawingMode.SQUARE) {
-
-            currentPoint = e.getPoint();
-            repaint();
-
-        } else if (currentMode == DrawingMode.RESIZE && controller.getSelectedShape() != null) {
-            // Resize shape berdasarkan pergerakan mouse
-            resizeShape(e.getPoint());
-            startPoint = e.getPoint(); // Update start point untuk resize berkelanjutan
-            repaint();
-        }
+    public void mouseMoved(MouseEvent e) {
+        // Optional: untuk preview atau cursor changes
     }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {}
+
+    @Override
+    public void mouseExited(MouseEvent e) {}
 
     private void resizeShape(Point currentPoint) {
         Shape selectedShape = controller.getSelectedShape();
@@ -346,7 +407,6 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
 
         controller.saveState();
         controller.removeShape(square);
-        // Kita perlu mengetahui ukuran square saat ini (tambahkan getter di SquareShape)
         Shape newSquare = new SquareShape(
                 square.getX(), square.getY(),
                 newSize,
@@ -390,45 +450,41 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
     }
 
     private void createLine() {
-        // Buat line dengan warna saat ini
         Shape line = controller.getShapesFactory().createShape(
                 "line",
                 startPoint.x, startPoint.y,
                 currentPoint.x, currentPoint.y,
-                currentColor // Gunakan warna saat ini
+                currentColor
         );
         controller.addShape(line);
     }
 
     private void createRectangle() {
-        // Buat rectangle dengan warna saat ini
         Shape rect = controller.getShapesFactory().createShape(
                 "rectangle",
                 startPoint.x, startPoint.y,
                 currentPoint.x, currentPoint.y,
-                currentColor // Gunakan warna saat ini
+                currentColor
         );
         controller.addShape(rect);
     }
 
     private void createCircle() {
-        // Buat circle dengan warna saat ini
         Shape circle = controller.getShapesFactory().createShape(
                 "circle",
                 startPoint.x, startPoint.y,
                 currentPoint.x, currentPoint.y,
-                currentColor // Gunakan warna saat ini
+                currentColor
         );
         controller.addShape(circle);
     }
 
     private void createSquare() {
-        // Buat square dengan warna saat ini
         Shape square = controller.getShapesFactory().createShape(
                 "square",
                 startPoint.x, startPoint.y,
                 currentPoint.x, currentPoint.y,
-                currentColor // Gunakan warna saat ini
+                currentColor
         );
         controller.addShape(square);
     }
@@ -438,14 +494,44 @@ public class RefactoredBoard extends JPanel implements MouseListener, MouseMotio
         currentPoint = null;
     }
 
-    @Override
-    public void mouseMoved(MouseEvent e) {
-        // Optional: untuk preview atau cursor changes
+    // Helper methods untuk mendapatkan pusat shape
+    private int getShapeCenterX(Shape shape) {
+        if (shape instanceof RectangleShape) {
+            RectangleShape rect = (RectangleShape) shape;
+            return (rect.getX1() + rect.getX2()) / 2;
+        } else if (shape instanceof CircleShape) {
+            CircleShape circle = (CircleShape) shape;
+            return circle.getCenterX();
+        } else if (shape instanceof SquareShape) {
+            SquareShape square = (SquareShape) shape;
+            return square.getX() + square.getSize() / 2;
+        } else if (shape instanceof LineShape) {
+            LineShape line = (LineShape) shape;
+            return (line.getX1() + line.getX2()) / 2;
+        } else if (shape instanceof TriangleShape) {
+            TriangleShape triangle = (TriangleShape) shape;
+            return (triangle.getX1() + triangle.getX2() + triangle.getX3()) / 3;
+        }
+        return 0;
     }
 
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
+    private int getShapeCenterY(Shape shape) {
+        if (shape instanceof RectangleShape) {
+            RectangleShape rect = (RectangleShape) shape;
+            return (rect.getY1() + rect.getY2()) / 2;
+        } else if (shape instanceof CircleShape) {
+            CircleShape circle = (CircleShape) shape;
+            return circle.getCenterY();
+        } else if (shape instanceof SquareShape) {
+            SquareShape square = (SquareShape) shape;
+            return square.getY() + square.getSize() / 2;
+        } else if (shape instanceof LineShape) {
+            LineShape line = (LineShape) shape;
+            return (line.getY1() + line.getY2()) / 2;
+        } else if (shape instanceof TriangleShape) {
+            TriangleShape triangle = (TriangleShape) shape;
+            return (triangle.getY1() + triangle.getY2() + triangle.getY3()) / 3;
+        }
+        return 0;
+    }
 }

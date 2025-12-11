@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6306c641-7c30-41ac-b70b-6a55478ca4b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Classes/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Classes/ShapesManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/ShapeRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/ViewShapes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Line.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/ShapeDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/ShapeDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Shapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Shapes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/ShapesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/ShapesFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Classes/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +46,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/SOLID IF71/StudyCaseSolidPrincipals/SOLID-code",
+    "last_opened_file_path": "C:/kotlin/StudyCaseSolidPrincipals/SOLID-code",
     "onboarding.tips.debug.path": "E:/SOLID IF71/StudyCaseSolidPrincipals/SOLID-code/src/View/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7a5fa171-79b4-46d6-87d4-51b81a3a9d10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/StudyCaseSolidPrincipals.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SOLID-FIX.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/DIP_renderer/AwtShapeRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/DIP_renderer/ShapeRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/ISP_interface/Copyable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/ISP_interface/Drawable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/ISP_interface/HitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/ISP_interface/Movable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/OCP_factory/ShapeFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/CircleShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/LineShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/RectangleShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/ShapeBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/SquareShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/TriangleShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/app/MainApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/decorator/ColorDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BluePrint/view/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Line.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/Classes/ShapeDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Shapes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/Classes/ShapesFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Square.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Triangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/View/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/View/GUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/View/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../default-code/default-code.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SOLID-code/SOLID-code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SOLID-code/SOLID-code.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="36ji8rbMRZxwvRsKtTeK7SRpr1w" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MainApp.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/kotlin/StudyCaseSolidPrincipals/SOLID-FIX/src",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3586207",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\kotlin\StudyCaseSolidPrincipals\SOLID-FIX\src" />
+    </key>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a5fa171-79b4-46d6-87d4-51b81a3a9d10" name="Changes" comment="" />
+      <created>1765526226228</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765526226228</updated>
+    </task>
+    <servers />
+  </component>
+</project>

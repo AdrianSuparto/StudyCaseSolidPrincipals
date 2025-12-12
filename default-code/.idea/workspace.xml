@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7a5fa171-79b4-46d6-87d4-51b81a3a9d10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/StudyCaseSolidPrincipals.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/SOLID-FIX.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/DIP_renderer/AwtShapeRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/DIP_renderer/ShapeRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/ISP_interface/Copyable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/ISP_interface/Drawable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/ISP_interface/HitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/ISP_interface/Movable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/MainApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/OCP_factory/ShapeFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/SRP_LSP_shapes/CircleShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/SRP_LSP_shapes/LineShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/SRP_LSP_shapes/RectangleShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/SRP_LSP_shapes/ShapeBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/SRP_LSP_shapes/SquareShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/SRP_LSP_shapes/TriangleShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/decorator/ColorDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/BluePrint/app/view/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/Classes/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/Classes/Line.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/Classes/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/Classes/ShapeDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/Classes/Shapes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/Classes/ShapesFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/Classes/Square.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/Classes/Triangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/View/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/View/GUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SOLID-FIX/src/View/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/default-code.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SOLID-code/SOLID-code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SOLID-code/SOLID-code.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="36ji8rbMRZxwvRsKtTeK7SRpr1w" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a5fa171-79b4-46d6-87d4-51b81a3a9d10" name="Changes" comment="" />
+      <created>1765526226228</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765526226228</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,99 +1,85 @@
 package Source.Classes;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 
-
-public class Rectangle extends Shapes implements Cloneable {
-
-    private int x1, y1;
-    private int x2, y2;
+public class Rectangle extends Shapes implements Movable, Fillable {
+    public int x1, y1, x2, y2;
+    private Color fillColor;
+    private boolean filled;
 
     public Rectangle(int x1, int y1, int x2, int y2, Color color) {
-        super();
-        setColor(color);
+        super(color);
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
+        this.fillColor = color;
     }
-
-    public int getX1() {
-        return x1;
-    }
-
-    public void setX1(int x1) {
-        this.x1 = x1;
-    }
-
-    public int getY1() {
-        return y1;
-    }
-
-    public void setY1(int y1) {
-        this.y1 = y1;
-    }
-
-    public int getX2() {
-        return x2;
-    }
-
-    public void setX2(int x2) {
-        this.x2 = x2;
-    }
-    public int getY2() {
-        return y2;
-    }
-    public void setY2(int y2) {
-        this.y2 = y2;
-    }
-
 
     @Override
     public void draw(Graphics g) {
-        g.setColor(getColor());
-        // Path2D.rect()
-        //  this.beginPath
-        this.moveTo(x1,y1);
-        this.lineTo(x1,y2);
-        this.lineTo(x2,y2);
-        this.lineTo(x2,y1);
-        this.closePath();
-        ((Graphics2D)g).drawRect(Math.min(x1,x2),Math.min(y1,y2),Math.abs(x2-x1),Math.abs(y2-y1));
+        g.setColor(color);
+        int width = Math.abs(x2 - x1);
+        int height = Math.abs(y2 - y1);
+        int startX = Math.min(x1, x2);
+        int startY = Math.min(y1, y2);
 
-        if(this.brushed) {
+        g.drawRect(startX, startY, width, height);
 
-            this.setBrushColor(getBrushColor());
-            this.brush(getBrushColor(), g);
-        }
-//        g.setColor(Color.CYAN);
-//        ((Graphics2D) g).fill(this);
-
-        //g.drawRect(Math.min(x1,x2),Math.min(y1,y2),Math.abs(x2-x1),Math.abs(x2-x1));
-
+        if (filled) fill(g);
     }
 
     @Override
-    public void shift(int xshift, int yshift) {
-        setX1(this.x1+xshift);
-        setX2(this.x2+xshift);
-        setY1(this.y1+yshift);
-        setY2(this.y2+yshift);
-
+    public void fill(Graphics g) {
+        g.setColor(fillColor);
+        int width = Math.abs(x2 - x1);
+        int height = Math.abs(y2 - y1);
+        int startX = Math.min(x1, x2);
+        int startY = Math.min(y1, y2);
+        ((Graphics2D) g).fillRect(startX, startY, width, height);
     }
 
-
-
-    public Shapes deepCopy(){
-
-        Shapes s= new Rectangle(this.x1,this.y1,this.x2,this.y2,this.getColor());
-        if(this.brushed)
-            s.brushed=true;
-        return s;
+    @Override
+    public void setFillColor(Color color) {
+        this.fillColor = color;
     }
 
+    @Override
+    public boolean isFilled() {
+        return filled;
+    }
 
-    private void brush(Color color,Graphics g){
-        g.setColor(color);
-        ((Graphics2D) g).fillRect(Math.min(x1,x2),Math.min(y1,y2),Math.abs(x2-x1),Math.abs(y2-y1));
+    @Override
+    public void shift(int xShift, int yShift) {
+        x1 += xShift;
+        y1 += yShift;
+        x2 += xShift;
+        y2 += yShift;
+    }
+
+    @Override
+    public boolean contains(int x, int y) {
+        int left = Math.min(x1, x2);
+        int right = Math.max(x1, x2);
+        int top = Math.min(y1, y2);
+        int bottom = Math.max(y1, y2);
+        return x >= left && x <= right && y >= top && y <= bottom;
+    }
+
+    @Override
+    public Shapes copy() {
+        Rectangle copy = new Rectangle(x1, y1, x2, y2, color);
+        copy.filled = this.filled;
+        copy.fillColor = this.fillColor;
+        return copy;
+    }
+
+    public void setBounds(int x1, int y1, int x2, int y2) {
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
     }
 }

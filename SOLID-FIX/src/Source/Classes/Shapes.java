@@ -1,14 +1,13 @@
 package Source.Classes;
 
-import java.awt.*;
-import java.awt.geom.Path2D;
+import java.awt.Color;
 
+public abstract class Shapes implements Drawable, Movable {
+    protected Color color;
 
-
-public abstract class Shapes extends Path2D.Float {
-    private Color color;
-    public boolean brushNow,brushed;
-    private Color BrushColor;
+    public Shapes(Color color) {
+        this.color = color;
+    }
 
     public Color getColor() {
         return color;
@@ -18,29 +17,7 @@ public abstract class Shapes extends Path2D.Float {
         this.color = color;
     }
 
-    public void setBrushColor(Color color){
-        this.BrushColor=color;
-    }
+    public abstract boolean contains(int x, int y);
 
-    public Color getBrushColor(){
-        return BrushColor;
-    }
-
-    public Shapes(){
-        super();
-    }
-
-    public abstract void draw(Graphics g);
-
-    public  boolean contains(int x, int y){
-        return super.contains(x,y);
-    }
-
-    abstract public void  shift (int x,int y);
-
-    abstract public Shapes deepCopy();
-
-
-//public abstract boolean contains(int x,int y);
-
+    public abstract Shapes copy();
 }

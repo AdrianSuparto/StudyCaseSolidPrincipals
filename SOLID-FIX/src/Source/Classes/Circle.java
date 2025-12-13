@@ -1,97 +1,79 @@
 package Source.Classes;
-import java.awt.*;
 
-public class Circle extends Shapes implements Cloneable {
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 
-    private int x,y,x2,y2;
+public class Circle extends Shapes implements Movable, Fillable {
+    public int x1, y1, x2, y2;
+    private Color fillColor;
+    private boolean filled;
 
-    public Circle(int x, int y,int x2,int y2,Color color) {
-        super();
-        setColor(color);
-        this.x=x;
-        this.y=y;
-        this.x2=x2;
-        this.y2=y2;
-
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setX2(int x2) {
+    public Circle(int x1, int y1, int x2, int y2, Color color) {
+        super(color);
+        this.x1 = x1;
+        this.y1 = y1;
         this.x2 = x2;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getX2() {
-        return x2;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public int getY2() {
-        return y2;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public void setY2(int y2) {
         this.y2 = y2;
-    }
-
-
-    public void draw(Graphics g) {
-        g.setColor(this.getColor());
-
-        float radius = (float) ((this.x2-this.x)/2.0);
-        float rX= this.x+radius,rY=this.y+radius;
-
-
-        g.drawOval(x,y,Math.abs(x-x2),Math.abs(x-x2));
-
-        if(this.brushed) {
-
-            this.setBrushColor(getBrushColor());
-            this.brush(getBrushColor(), g);
-        }
+        this.fillColor = color;
     }
 
     @Override
-    public boolean contains(int x,int y) {
-//        super.contains(x,y);
-        System.out.println("the dimensions "+this.x+" "+this.y+" "+this.x2+" "+this.y2);
-
-        float radius = (float) ((this.x2-this.x)/2.0);
-        float rX= this.x+radius,rY=this.y+radius;
-        System.out.println("inside circle contain method,radius squared= "+Math.pow(radius, 2) +" dist bw centre and point "+Math.pow((rX - x), 2) + Math.pow((rY - y), 2));
-        return (Math.pow((rX - x), 2) + Math.pow((rY - y), 2)) <= Math.pow(radius, 2);
-    }
-
-    public void shift(int xshift, int yshift) {
-        setX(this.x+xshift);
-        setX2(this.x2+xshift);
-        setY(this.y+yshift);
-        setY2(this.y2+yshift);
-
-    }
-
-    private void brush(Color color,Graphics g){
+    public void draw(Graphics g) {
         g.setColor(color);
-        ((Graphics2D) g).fillOval(x,y,Math.abs(x-x2),Math.abs(x-x2));
+        int diameter = Math.abs(x2 - x1);
+        g.drawOval(x1, y1, diameter, diameter);
+
+        if (filled) fill(g);
     }
 
-    public Shapes deepCopy(){
-        Shapes s = new Circle(this.x,this.y,this.x2,this.y2,this.getColor());
-        if(this.brushed)
-            s.brushed=true;
-        return s;
+    @Override
+    public void fill(Graphics g) {
+        g.setColor(fillColor);
+        int diameter = Math.abs(x2 - x1);
+        ((Graphics2D) g).fillOval(x1, y1, diameter, diameter);
+    }
+
+    @Override
+    public void setFillColor(Color color) {
+        this.fillColor = color;
+    }
+
+    @Override
+    public boolean isFilled() {
+        return filled;
+    }
+
+    @Override
+    public void shift(int xShift, int yShift) {
+        x1 += xShift;
+        y1 += yShift;
+        x2 += xShift;
+        y2 += yShift;
+    }
+
+    @Override
+    public boolean contains(int x, int y) {
+        int centerX = x1 + (x2 - x1) / 2;
+        int centerY = y1 + (y2 - y1) / 2;
+        int radius = Math.abs(x2 - x1) / 2;
+        double distance = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
+        return distance <= radius;
+    }
+
+    @Override
+    public Shapes copy() {
+        Circle copy = new Circle(x1, y1, x2, y2, color);
+        copy.filled = this.filled;
+        copy.fillColor = this.fillColor;
+        return copy;
+    }
+
+    // Getter dan setter untuk koordinat
+    public void setBounds(int x1, int y1, int x2, int y2) {
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
     }
 }

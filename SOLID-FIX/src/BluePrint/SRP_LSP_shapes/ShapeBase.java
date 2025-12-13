@@ -4,7 +4,7 @@ import BluePrint.ISP_interface.Copyable;
 import BluePrint.ISP_interface.Drawable;
 import BluePrint.ISP_interface.HitTest;
 import BluePrint.ISP_interface.Movable;
-import BluePrint.app.ISP_interface.*;
+import BluePrint.ISP_interface.*;
 import java.awt.Color;
 import BluePrint.DIP_renderer.ShapeRenderer;
 

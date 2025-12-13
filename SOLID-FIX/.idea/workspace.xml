@@ -5,42 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a5fa171-79b4-46d6-87d4-51b81a3a9d10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/StudyCaseSolidPrincipals.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/DIP_renderer/AwtShapeRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/DIP_renderer/ShapeRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/ISP_interface/Copyable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/ISP_interface/Drawable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/ISP_interface/HitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/ISP_interface/Movable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/OCP_factory/ShapeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/CircleShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/LineShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/RectangleShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/ShapeBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/SquareShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/TriangleShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/app/MainApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/decorator/ColorDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BluePrint/view/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Line.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Source/Classes/ShapeDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Shapes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Source/Classes/ShapesFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Triangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Source/View/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Source/View/GUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Source/View/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../default-code/default-code.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SOLID-code/SOLID-code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SOLID-code/SOLID-code.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Drawable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Fillable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Source/Classes/Movable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/DIP_renderer/AwtShapeRenderer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/DIP_renderer/ShapeRenderer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/ISP_interface/Copyable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/ISP_interface/Drawable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/ISP_interface/HitTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/ISP_interface/Movable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/OCP_factory/ShapeFactory$ShapeBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/OCP_factory/ShapeFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/SRP_LSP_shapes/CircleShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/SRP_LSP_shapes/LineShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/SRP_LSP_shapes/RectangleShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/SRP_LSP_shapes/ShapeBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/SRP_LSP_shapes/SquareShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/SRP_LSP_shapes/TriangleShape.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/app/MainApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/decorator/ColorDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/view/Board$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOLID-FIX/view/Board.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/ShapeBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/ShapeBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Source/Classes/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Source/Classes/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Source/Classes/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Source/Classes/ShapeDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Source/Classes/ShapesDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Shapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Source/Classes/Shapes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Source/Classes/ShapesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Source/Classes/ShapesFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Source/Classes/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Source/Classes/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Source/View/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Source/View/Board.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +66,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.GUI.executor": "Run",
     "Application.MainApp.executor": "Run",
+    "Application.Source.View.GUI.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -88,6 +87,43 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\kotlin\StudyCaseSolidPrincipals\SOLID-FIX\src" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="BluePrint.view" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Source.View.GUI">
+    <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Gwen.View.GUI" />
+      <module name="SOLID-FIX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Gwen.View.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Source.View.GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Source.View.GUI" />
+      <module name="SOLID-FIX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Source.View.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Source.View.GUI" />
+        <item itemvalue="Application.GUI" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

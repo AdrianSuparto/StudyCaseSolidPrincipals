@@ -1,4 +1,4 @@
-package BluePrint.ISP_interface;
+package ISP_interface;
 
 public interface HitTest {
     boolean contains(int x, int y);

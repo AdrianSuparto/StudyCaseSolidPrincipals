@@ -1,4 +1,4 @@
-package BluePrint.ISP_interface;
+package ISP_interface;
 
 public interface Copyable<T> {
     T deepCopy();

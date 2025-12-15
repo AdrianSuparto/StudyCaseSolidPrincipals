@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a5fa171-79b4-46d6-87d4-51b81a3a9d10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SRP_LSP_shapes/LineShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SRP_LSP_shapes/LineShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../default-code/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../default-code/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../default-code/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../default-code/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

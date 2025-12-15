@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7882781-f8c9-4750-a97a-a28f71f0a664" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/src/Classes/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/src/Classes/Line.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/src/Classes/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/src/Classes/ShapeDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/src/Classes/Shapes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/src/Classes/ShapesFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/src/Classes/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/src/Classes/Triangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/src/View/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/src/View/GUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SOLID-FIX/src/View/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SOLID-code/SOLID-code.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOLID-FIX/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SOLID-FIX/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SOLID-FIX/src/SRP_LSP_shapes/LineShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/SOLID-FIX/src/SRP_LSP_shapes/LineShape.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +13,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="36jiBi88wAIiqHZkoRpg3lpSJBn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,13 +29,20 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/kotlin/StudyCaseSolidPrincipals"
+    "last_opened_file_path": "C:/xampp/htdocs/StudyCaseSolidPrincipals"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\kotlin\StudyCaseSolidPrincipals" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

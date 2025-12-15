@@ -5,46 +5,108 @@ import DIP_renderer.ShapeRenderer;
 import java.awt.Color;
 
 public class LineShape extends ShapeBase {
-    private int x1, y1, x2, y2;
+    private static final double SELECTION_TOLERANCE_SQUARED = 9.0; // (3px)^2
 
-    public LineShape(int x1, int y1, int x2, int y2, Color color) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
-        setLineColor(color);
+    private int startX;
+    private int startY;
+    private int endX;
+    private int endY;
+
+    public LineShape(int startX, int startY, int endX, int endY, Color lineColor) {
+        this.startX = startX;
+        this.startY = startY;
+        this.endX = endX;
+        this.endY = endY;
+        setLineColor(lineColor);
     }
 
     @Override
     public void draw(ShapeRenderer renderer) {
         applyLineColor(renderer);
-        renderer.drawLine(x1, y1, x2, y2);
+        renderer.drawLine(startX, startY, endX, endY);
     }
 
     @Override
-    public boolean contains(int px, int py) {
-        double dx = x2 - x1, dy = y2 - y1;
-        double length2 = dx * dx + dy * dy;
-        if (length2 == 0) return px == x1 && py == y1;
-        double t = ((px - x1) * dx + (py - y1) * dy) / length2;
-        if (t < 0 || t > 1) return false;
-        double projx = x1 + t * dx;
-        double projy = y1 + t * dy;
-        double dist2 = (px - projx) * (px - projx) + (py - projy) * (py - projy);
-        return dist2 <= 9.0; // tolerance (3px)^2
+    public boolean contains(int pointX, int pointY) {
+        if (isSinglePointLine()) {
+            return isPointEqualToLineStart(pointX, pointY);
+        }
+
+        return isPointWithinToleranceOfLine(pointX, pointY);
+    }
+
+    private boolean isSinglePointLine() {
+        return calculateLineLengthSquared() == 0;
+    }
+
+    private boolean isPointEqualToLineStart(int pointX, int pointY) {
+        return pointX == startX && pointY == startY;
+    }
+
+    private boolean isPointWithinToleranceOfLine(int pointX, int pointY) {
+        double projectionParameter = calculateProjectionParameter(pointX, pointY);
+
+        if (isProjectionOutsideLineSegment(projectionParameter)) {
+            return false;
+        }
+
+        double squaredDistance = calculateSquaredDistanceToProjection(pointX, pointY, projectionParameter);
+        return isWithinSelectionTolerance(squaredDistance);
+    }
+
+    private double calculateLineLengthSquared() {
+        int horizontalDistance = endX - startX;
+        int verticalDistance = endY - startY;
+        return horizontalDistance * horizontalDistance + verticalDistance * verticalDistance;
+    }
+
+    private double calculateProjectionParameter(int pointX, int pointY) {
+        int horizontalDistance = endX - startX;
+        int verticalDistance = endY - startY;
+        double lineLengthSquared = horizontalDistance * horizontalDistance + verticalDistance * verticalDistance;
+
+        return ((pointX - startX) * horizontalDistance + (pointY - startY) * verticalDistance) / lineLengthSquared;
+    }
+
+    private boolean isProjectionOutsideLineSegment(double projectionParameter) {
+        return projectionParameter < 0 || projectionParameter > 1;
+    }
+
+    private double calculateSquaredDistanceToProjection(int pointX, int pointY, double projectionParameter) {
+        int horizontalDistance = endX - startX;
+        int verticalDistance = endY - startY;
+
+        double projectedX = startX + projectionParameter * horizontalDistance;
+        double projectedY = startY + projectionParameter * verticalDistance;
+
+        double xDifference = pointX - projectedX;
+        double yDifference = pointY - projectedY;
+
+        return xDifference * xDifference + yDifference * yDifference;
+    }
+
+    private boolean isWithinSelectionTolerance(double squaredDistance) {
+        return squaredDistance <= SELECTION_TOLERANCE_SQUARED;
     }
 
     @Override
-    public void shift(int dx, int dy) {
-        x1 += dx;
-        x2 += dx;
-        y1 += dy;
-        y2 += dy;
+    public void shift(int horizontalShift, int verticalShift) {
+        startX += horizontalShift;
+        endX += horizontalShift;
+        startY += verticalShift;
+        endY += verticalShift;
     }
 
     @Override
     public ShapeBase deepCopy() {
-        LineShape c = new LineShape(x1, y1, x2, y2, getLineColor());
-        return c;
+        return new LineShape(startX, startY, endX, endY, getLineColor());
+    }
+
+    public void setEndX(int endX) {
+        this.endX = endX;
+    }
+
+    public void setEndY(int endY) {
+        this.endY = endY;
     }
 }

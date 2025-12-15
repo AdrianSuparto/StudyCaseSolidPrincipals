@@ -5,44 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a5fa171-79b4-46d6-87d4-51b81a3a9d10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/SRP_LSP_shapes/RectangleShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SRP_LSP_shapes/SquareShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SRP_LSP_shapes/TriangleShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/DIP_renderer/AwtShapeRenderer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/DIP_renderer/ShapeRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DIP_renderer/ShapeRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/ISP_interface/Copyable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISP_interface/Copyable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/ISP_interface/Drawable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISP_interface/Drawable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/ISP_interface/HitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISP_interface/HitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/ISP_interface/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISP_interface/Movable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/OCP_factory/ShapeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OCP_factory/ShapeFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/CircleShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SRP_LSP_shapes/CircleShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/LineShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SRP_LSP_shapes/LineShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/RectangleShape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/ShapeBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SRP_LSP_shapes/ShapeBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/SquareShape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/SRP_LSP_shapes/TriangleShape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/app/MainApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/decorator/ColorDecorator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BluePrint/view/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Circle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Drawable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Fillable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Line.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Movable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Rectangle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Shapes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/Classes/ShapesDecorator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/Classes/ShapesFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Square.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/Classes/Triangle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/View/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/View/GUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source/View/GUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SRP_LSP_shapes/LineShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SRP_LSP_shapes/LineShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../default-code/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../default-code/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../default-code/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../default-code/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../default-code/src/Classes/Shapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../default-code/src/Classes/Shapes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../default-code/src/Classes/ShapesFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../default-code/src/Classes/ShapesFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../default-code/src/Classes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/../default-code/src/Classes/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -69,25 +38,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GUI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Source.View.GUI.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/kotlin/StudyCaseSolidPrincipals/SOLID-FIX/src&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.3586207&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GUI.executor": "Run",
+    "Application.MainApp.executor": "Run",
+    "Application.Source.View.GUI.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/xampp/htdocs/StudyCaseSolidPrincipals/SOLID-FIX",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3586207",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\kotlin\StudyCaseSolidPrincipals\SOLID-FIX\src" />
@@ -96,7 +65,7 @@
       <recent name="BluePrint.view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Source.View.GUI">
+  <component name="RunManager">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Gwen.View.GUI" />
       <module name="SOLID-FIX" />
@@ -129,6 +98,13 @@
         <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
